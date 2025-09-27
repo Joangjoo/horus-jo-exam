@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine 
+    container_name: horus_db_postgres 
+    restart: unless-stopped
+
+    environment: 
+      POSTGRES_DB: horus_jo_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: horusjo
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
