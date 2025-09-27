@@ -4,7 +4,7 @@ import { useAuthStore } from '../store/auth';
 
 const props = defineProps({
     show: Boolean,
-    user: Object, // data user yang dipilih
+    user: Object, 
 });
 const emit = defineEmits(['close', 'updated']);
 
@@ -16,7 +16,6 @@ const email = ref('');
 const errorMessage = ref('');
 const isLoading = ref(false);
 
-// setiap kali modal dibuka, isi data form
 watch(() => props.user, (val) => {
     if (val) {
         nama.value = val.nama;
@@ -104,7 +103,6 @@ watch(() => props.show, (val) => {
                     {{ errorMessage }}
                 </div>
 
-                <!-- Action Buttons -->
                 <div class="flex flex-col sm:flex-row gap-3 pt-4">
                     <button type="button" @click="$emit('close')" :disabled="isLoading"
                         class="flex-1 px-4 py-3 border-2 border-slate-300 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 hover:border-slate-400 focus:ring-4 focus:ring-slate-200 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">

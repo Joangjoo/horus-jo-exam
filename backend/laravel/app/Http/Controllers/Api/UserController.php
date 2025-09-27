@@ -104,9 +104,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        if (auth('api')->id() != $user->id) {
-            return response()->json(['message' => 'Akses ditolak.'], 403);
-        }
+
 
 
         $validated = $request->validate([
@@ -132,15 +130,11 @@ class UserController extends Controller
             'message' => 'Data user berhasil diperbarui',
             'user' => $user
         ], 200);
-    }
+    }   
 
     public function destroy($id)
     {
         $user = User::findOrFail($id);
-
-        if (auth('api')->id() != $user->id) {
-            return response()->json(['message' => 'Akses ditolak.'], 403);
-        }
 
         $user->delete();
 

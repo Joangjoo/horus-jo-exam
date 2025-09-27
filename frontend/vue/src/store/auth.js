@@ -8,7 +8,7 @@ export const useAuthStore = defineStore('auth', {
         user: null,
         token: localStorage.getItem('token') || null,
         isAuthenticated: false,
-        users: [], // untuk index /users
+        users: [], 
     }),
 
     getters: {
@@ -23,7 +23,7 @@ export const useAuthStore = defineStore('auth', {
             try {
                 const payload = JSON.parse(atob(token.split('.')[1]));
                 const currentTime = Math.floor(Date.now() / 1000);
-                return payload.exp < (currentTime + 300); // expired dalam 5 menit
+                return payload.exp < (currentTime + 300); 
             } catch (error) {
                 console.error('Error parsing token:', error);
                 return true;
@@ -160,14 +160,24 @@ export const useAuthStore = defineStore('auth', {
         async updateUser(id, payload) {
             try {
                 const res = await apiClient.put(`/users/${id}`, payload);
-                // Optional: update state users kalau mau langsung reflect
                 const idx = this.users.findIndex(u => u.id === id);
                 if (idx !== -1) this.users[idx] = res.data;
                 return res.data;
             } catch (error) {
                 throw error;
             }
-        }
+        },
 
+        async deleteUser(id) {
+        try {
+            await apiClient.delete(`/users/${id}`);
+            this.users = this.users.filter(u => u.id !== id);
+        } catch (error) {
+            console.error('Gagal menghapus user:', error);
+            throw error;
+        }
+    }
     },
+
+    
 });
