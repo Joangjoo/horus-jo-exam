@@ -97,19 +97,22 @@ cp .env.example .env
 # 3. Jalankan container Docker (database PostgreSQL)
 docker-compose up -d
 
-# 4. Install dependensi Composer
+# 4 Install Laravel menggunakan Composer
+composer create-project laravel/laravel backend
+
+# 5. Install dependensi Composer
 composer install
 
-# 5. Generate application key
+# 6. Generate application key
 php artisan key:generate
 
-# 6. Generate JWT secret key
+# 7. Generate JWT secret key
 php artisan jwt:secret
 
-# 7. Jalankan migrasi database
+# 8. Jalankan migrasi database
 php artisan migrate
 
-# 8. Jalankan server Laravel (di terminal terpisah)
+# 9. Jalankan server Laravel (di terminal terpisah)
 php artisan serve
 # Backend akan berjalan di [http://127.0.0.1:8000](http://127.0.0.1:8000)
 ```
@@ -123,6 +126,12 @@ cd ../frontend
 
 # 2. Install dependensi Node.js
 npm install
+
+# Buat project Vue  dengan Vite
+npm create vite@latest 
+
+# Pilih framework: Vue
+# Pilih variant: Vue + JavaScript 
 
 # 3. Jalankan server development Vite
 npm run dev
