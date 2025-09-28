@@ -62,7 +62,7 @@ Aplikasi Full-Stack untuk manajemen pengguna yang dibuat sebagai bagian dari tug
 ## ## Teknologi yang Digunakan
 
 #### **Backend (API)**
--   **Framework**: Laravel 11
+-   **Framework**: Laravel 12
 -   **Database**: PostgreSQL
 -   **Autentikasi**: `tymon/jwt-auth`
 -   **Environment**: Docker & Docker Compose
