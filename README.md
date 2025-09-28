@@ -28,16 +28,34 @@ Aplikasi Full-Stack untuk manajemen pengguna yang dibuat sebagai bagian dari tug
 ## 📸 Screenshot Aplikasi
 
 ### Halaman Login
-![Login Page](Dokumentasi/login.png)
+<p align="center">
+  <img src="Dokumentasi/login.png" alt="Login Page" width="500"/>
+</p>
 
-### Dashboard Admin
-![Dashboard](screenshots/dashboard.png)
+### Halaman Registrasi
+<p align="center">
+  <img src="Dokumentasi/Registrasi.png" alt="Login Page" width="500"/>
+</p>
 
-### Profil Pengguna
-![User Profile](screenshots/profile.png)
+### Halaman Dashboard
+<p align="center">
+  <img src="Dokumentasi/dashboard.png" alt="Login Page" width="500"/>
+</p>
 
-### Form Edit User
-![Edit User](screenshots/edit-user.png)
+### Search Bar
+<p align="center">
+  <img src="Dokumentasi/search.png" alt="Login Page" width="500"/>
+</p>
+
+### Update User 
+<p align="center">
+  <img src="Dokumentasi/update.png" alt="Login Page" width="500"/>
+</p>
+
+### Delete User 
+<p align="center">
+  <img src="Dokumentasi/delete.png" alt="Login Page" width="500"/>
+</p>
 
 ---
 
