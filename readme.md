@@ -69,3 +69,17 @@ php artisan migrate
 # Jalankan server
 php artisan serve
 # backend berjalan di http://127.0.0.1:8000
+
+
+## 📌 API Documentation
+
+### 🔑 Login User
+**Endpoint**:  
+`POST /api/users/login`
+
+**Request Body** (JSON):
+```json
+{
+  "email": "Sholah@example.com",
+  "password": "password123"
+}
