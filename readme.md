@@ -73,19 +73,73 @@ php artisan serve
 
 ## 📌 API Documentation
 
-### 🔑 Login User
-**Endpoint**:  
-`POST /api/users/login`
+### ### Registrasi
+Endpoint untuk membuat akun pengguna baru.
 
-## 1. Autentikasi
+`POST /api/auth/register`
 
-### Registrasi
-- **POST** `/api/register`
-- **Body**:
-```json
-{
-  "username": "johndoe",
-  "email": "user@email.com",
-  "password": "password",
-  "nama": "John Doe"
-}
+* **Body:**
+    ```json
+    {
+      "nama": "Nama Pengguna Baru",
+      "username": "usernamebaru",
+      "email": "baru@email.com",
+      "password": "password_rahasia"
+    }
+    ```
+
+* **Response (Sukses `201 Created`):**
+    ```json
+    {
+      "message": "Registrasi Berhasil",
+      "user": {
+        "nama": "Nama Pengguna Baru",
+        "username": "usernamebaru",
+        "email": "baru@email.com",
+        "updated_at": "2025-09-27T17:30:00.000000Z",
+        "created_at": "2025-09-27T17:30:00.000000Z",
+        "id": 1
+      }
+    }
+    ```
+* **Response (Gagal `422 Unprocessable Entity`):**
+    ```json
+    {
+        "message": "Validasi gagal",
+        "errors": {
+            "email": [
+                "The email has already been taken."
+            ]
+        }
+    }
+    ```
+
+---
+
+### ### Login
+Endpoint untuk mengautentikasi pengguna dan mendapatkan token JWT.
+
+`POST /api/auth/login`
+
+* **Body:**
+    ```json
+    {
+      "username": "usernamebaru",
+      "password": "password_rahasia"
+    }
+    ```
+* **Response (Sukses `200 OK`):**
+    ```json
+    {
+        "message": "Login berhasil",
+        "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3Mi...",
+        "token_type": "bearer",
+        "expires_in": 3600
+    }
+    ```
+* **Response (Gagal `401 Unauthorized`):**
+     ```json
+    {
+        "message": "Username atau password salah."
+    }
+    ```
