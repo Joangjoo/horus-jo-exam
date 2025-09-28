@@ -81,7 +81,7 @@ Aplikasi Full-Stack untuk manajemen pengguna yang dibuat sebagai bagian dari tug
 ### ### Prasyarat
 -   Git
 -   Docker & Docker Compose
--   Node.js (v18 atau lebih baru)
+-   Node.js 
 -   Composer
 
 ### ### 1. Setup Backend (Laravel)
