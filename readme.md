@@ -77,9 +77,15 @@ php artisan serve
 **Endpoint**:  
 `POST /api/users/login`
 
-**Request Body** (JSON):
+## 1. Autentikasi
+
+### Registrasi
+- **POST** `/api/register`
+- **Body**:
 ```json
 {
-  "email": "Sholah@example.com",
-  "password": "password123"
+  "username": "johndoe",
+  "email": "user@email.com",
+  "password": "password",
+  "nama": "John Doe"
 }
